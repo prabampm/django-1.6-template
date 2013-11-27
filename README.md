@@ -42,7 +42,7 @@ To create a project using this template, open a terminal and navigate to the pla
 
     (django16)$ cd ~/projects
 
-Assuming you are still in the context of the django16 virtual environment, type the following:
+Assuming you are still in the context of the django16 virtual environment, let's clone the project into a directory called **projectName**:
 
     (django16)$ git clone https://github.com/dereknutile/django-1.6-template.git projectName
 
@@ -55,7 +55,7 @@ First, make sure you are in the directory for the project you just made:
 You should now be in the ~/projects/**projectName** directory.
 
 
-Installing dependencies is done using PIP and is relative to your environment.  The environment requirements are listed within requirements directory with a file name like ```{environment}.txt```.
+Installing dependencies is done using PIP and is relative to your environment.  The environment requirements are listed within requirements directory with a file name like _{environment}.txt_.
 
 To install requirements on your development system, use PIP to reference the development configuration file:
 
@@ -67,7 +67,7 @@ First, initialize the SQLITE database.  Note: you may be asked to define the sup
 
     (django16)$ python project/manage.py syncdb
     
-Create your database migrations:
+Initialize your database migrations:
 
     (django16)$ python project/manage.py migrate
 
@@ -75,3 +75,4 @@ Run the server ...
 
     (django16)$ python project/manage.py runserver    
 
+Test it out: [http://127.0.0.1:8000](127.0.0.1:8000).
