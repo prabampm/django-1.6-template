@@ -1,7 +1,7 @@
 # Django 1.6 Template
 
 ## Overview
-This is a modified and repurposed version of this project [https://github.com/twoscoops/django-twoscoops-project](https://github.com/twoscoops/django-twoscoops-project).
+This is a modified and repurposed version of this project [https://github.com/twoscoops/django-twoscoops-project](https://github.com/twoscoops/django-twoscoops-project).  Also, I've trimmed the instructions to work with a *nix system (not Windows).
 
 The goal is to have a standardized baseline Django 1.6 application skeleton to build web applications from.
 
@@ -13,20 +13,14 @@ The application uses Python and Django tools like [virtualenv](http://www.virtua
 
 ## Setup
 
-* [Clone the Template](#clone-template)
 * [Create a Virtual Environment](#create-virtualenv)
-* [Install Django within the Virtual Environment](#install-django)
 * [Install Dependencies](#install-dependencies)
-
-### [Clone the Template](id:clone-template)
-
-To create a project using this template, open a terminal and type the following:
-
-    $ django-admin.py startproject --template=https://github.com/dereknutile/django-1.6-template/zipball/master --extension=py,rst,html project
+* [Clone the Template](#clone-template)
+* [Run Server](#anchor-run-server)
 
 ### [Create a Virtual Environment](id:anchor-create-virtualenv)
 
-In a terminal, create your virtual environment using virtualenvwrapper commands.  Here we'll name it ```django16```, but you may want to change it to something that makes more sense for your application.
+In a terminal, create your virtual environment using virtualenvwrapper commands.  Here we'll name it ```django16```, but you may want to change it to something that makes more sense for your this environment.
 
     $ mkvirtualenv django16
 
@@ -40,19 +34,33 @@ You should see something similar to the following:
 
     (django16)$
 
-See the [Virtualenvwrapper Docs](http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html "Virtualenvwrapper Docs") for more commands.
+Note: See the [Virtualenvwrapper Docs](http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html "Virtualenvwrapper Docs") for more commands.
 
- 
-### [Install Django within the Virtual Environment](id:anchor-install-django)
+### [Clone the Template](id:clone-template)
 
-To install Django in the new virtual environment, run the following command::
+To create a project using this template, open a terminal and navigate to the place where you want to keep your project. Assuming you are still in the context of the django16 virtual environment, type the following:
 
-    (django16)$ pip install django
+    (django16)$ git clone https://github.com/dereknutile/django-1.6-template.git projectName
 
 ### [Install Dependencies](id:anchor-install-dependencies)
 
 Installing dependencies is done using PIP and is relative to your environment.  The environment requirements are listed within requirements directory with a file name like ```{environment}.txt```.
 
-To install requirements on your development system:
+To install requirements on your development system, use PIP to reference the development configuration file:
 
     (django16)$ pip install -r requirements/development.txt
+
+### [Run Server](id:anchor-run-server)
+
+First, initialize the SQLITE database.  Note: you may be asked to define the superuser/admin.
+
+    (django16)$ python project/manage.py syncdb
+
+Run the server ...
+
+    (django16)$ python project/manage.py runserver    
+
+> Note: I ran into an issue where the server was failing because of a version issue with the debug toolbar.  The error message was ``` ImproperlyConfigured: Error importing module debug_toolbar.middleware: "No module named defaults" ```  The solution was to force a new version of the toolbar with this command:
+
+    (django16)$ pip install --upgrade https://github.com/django-debug-toolbar/django-debug-toolbar/archive/mast
+er.zip
