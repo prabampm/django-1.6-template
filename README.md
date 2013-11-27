@@ -55,12 +55,12 @@ To install requirements on your development system, use PIP to reference the dev
 First, initialize the SQLITE database.  Note: you may be asked to define the superuser/admin.
 
     (django16)$ python project/manage.py syncdb
+    
+Create your database migrations:
+
+    (django16)$ python project/manage.py migrate
 
 Run the server ...
 
     (django16)$ python project/manage.py runserver    
 
-> Note: I ran into an issue where the server was failing because of a version issue with the debug toolbar.  The error message was ``` ImproperlyConfigured: Error importing module debug_toolbar.middleware: "No module named defaults" ```  The solution was to force a new version of the toolbar with this command:
-
-    (django16)$ pip install --upgrade https://github.com/django-debug-toolbar/django-debug-toolbar/archive/mast
-er.zip
