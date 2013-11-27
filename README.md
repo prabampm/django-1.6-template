@@ -18,7 +18,7 @@ The application uses Python and Django tools like [virtualenv](http://www.virtua
 * [Install Dependencies](#install-dependencies)
 * [Run Server](#run-server)
 
-### [Create a Virtual Environment](id:anchor-create-virtualenv)
+### [Create a Virtual Environment](id:anchor-create-a-virtual-environment)
 
 In a terminal, create your virtual environment using virtualenvwrapper commands.  Here we'll name it ```django16```, but you may want to change it to something that makes more sense for your this environment.
 
@@ -36,7 +36,7 @@ You should see something similar to the following:
 
 Note: See the [Virtualenvwrapper Docs](http://virtualenvwrapper.readthedocs.org/en/latest/command_ref.html "Virtualenvwrapper Docs") for more commands.
 
-### [Clone the Template](id:anchor-clone-template)
+### [Clone the Template](id:anchor-clone-the-template)
 
 To create a project using this template, open a terminal and navigate to the place where you want to keep your project. Assuming you are still in the context of the django16 virtual environment, type the following:
 
