@@ -38,11 +38,22 @@ Note: See the [Virtualenvwrapper Docs](http://virtualenvwrapper.readthedocs.org/
 
 ### [Clone the Template](id:anchor-clone-the-template)
 
-To create a project using this template, open a terminal and navigate to the place where you want to keep your project. Assuming you are still in the context of the django16 virtual environment, type the following:
+To create a project using this template, open a terminal and navigate to the place where you want to keep your project, let's say it's **~/projects/**.
+
+    (django16)$ cd ~/projects
+
+Assuming you are still in the context of the django16 virtual environment, type the following:
 
     (django16)$ git clone https://github.com/dereknutile/django-1.6-template.git projectName
 
 ### [Install Dependencies](id:anchor-install-dependencies)
+
+First, make sure you are in the directory for the project you just made:
+
+    (django16)$ cd projectName
+
+You should now be in the ~/projects/**projectName** directory.
+
 
 Installing dependencies is done using PIP and is relative to your environment.  The environment requirements are listed within requirements directory with a file name like ```{environment}.txt```.
 
