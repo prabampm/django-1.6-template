@@ -6,7 +6,7 @@ This is a modified and repurposed version of this project [https://github.com/tw
 The goal is to have a standardized baseline Django 1.6 application skeleton to build web applications from.
 
 ## Requirements
-The application uses Python and Django tools like [virtualenv](http://www.virtualenv.org/ "Virtualenv") and [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/ "Virtualenvwrapper") to manage versions and dependencies within different development environments.  In order to properly use this application you must have the following installed:
+The documentation below assumes you're using [virtualenv](http://www.virtualenv.org/ "Virtualenv") and [virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/ "Virtualenvwrapper") to manage versions and dependencies within different development environments.  In order to properly develop this application you should have the following installed:
 
 * [Virtualenv](http://www.virtualenv.org/ "Virtualenv")
 * [Virtualenvwrapper](http://virtualenvwrapper.readthedocs.org/ "Virtualenvwrapper")
@@ -67,9 +67,9 @@ First, initialize the SQLITE database.  Note: you may be asked to define the sup
 
     (django16)$ python project/manage.py syncdb
     
-Initialize your database migrations:
+Initialize the [SOUTH](http://south.readthedocs.org/) database migrations:
 
-    (django16)$ python project/manage.py migrate
+    (django16)$ python project/manage.py migrate --initial
 
 Run the server ...
 
