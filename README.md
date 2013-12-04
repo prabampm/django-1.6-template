@@ -63,13 +63,9 @@ To install requirements on your development system, use PIP to reference the dev
 
 ### [Run Server](id:anchor-run-server)
 
-First, initialize the SQLITE database.  Note: you may be asked to define the superuser/admin.
+First, initialize the SQLITE database.  *Note: you may be asked to define the superuser/admin*.
 
     (django16)$ python project/manage.py syncdb
-    
-Initialize the [SOUTH](http://south.readthedocs.org/) database migrations:
-
-    (django16)$ python project/manage.py migrate --initial
 
 Run the server ...
 
