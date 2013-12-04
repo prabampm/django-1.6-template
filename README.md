@@ -72,3 +72,18 @@ Run the server ...
     (django16)$ python project/manage.py runserver    
 
 Test it out: [http://127.0.0.1:8000](127.0.0.1:8000).
+
+## Best Practices
+
+### Apps
+There's a directory to drop your apps into: ```project/apps/```.  To keep the directory structure clean, organized, and re-usable, place your existing apps right in that directory or use django-admin.py to generate them in that directory like this:
+
+    (django16)$ cd project/apps/
+    (django16)$ django-admin.py startapp newapp
+
+Once you've got your app in the right place, call it from the right environmental settings file.  If this app can be used in any environment, then open ```project/project/settings/base.txt``` and find the **LOCAL_APPS()** tuple.  In the example above, the LOCAL_APP tuple would look like this (don't forget to include the *apps* prefix):
+
+    # Apps specific for this project go here.
+    LOCAL_APPS = (
+        'apps.newapp',
+    )
